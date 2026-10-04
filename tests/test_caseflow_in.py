@@ -63,6 +63,11 @@ class CaseflowINTests(unittest.TestCase):
         self.assertEqual(assessment["status"], "SOURCE_UNAVAILABLE")
         self.assertEqual(assessment["quote"], "")
 
+    def test_source_digest_ignores_whitespace_layout(self):
+        first = self.module.digest(" ".join("source  text\nwith spacing".split()))
+        second = self.module.digest(" ".join("source text with   spacing".split()))
+        self.assertEqual(first, second)
+
     def test_rejects_invalid_source_and_chain(self):
         with self.assertRaisesRegex(ValueError, "https"):
             self.contract.submit_claim("A public source statement.", "http://example.org")

@@ -95,7 +95,9 @@ class CaseflowIN(gl.Contract):
                 page = gl.nondet.web.render(claim["source_url"], mode="text")
                 if not isinstance(page, str) or not 100 <= len(page) <= 120000:
                     return canonical({"available": False, "source_digest": "", "result": None})
-                source_digest = digest(page)
+                # Stable provenance digest: ignore validator-specific whitespace
+                # while preserving the rendered source text itself.
+                source_digest = digest(" ".join(page.split()))
                 prompt = (
                     "Review one public source against one claim. Return JSON with exactly "
                     "verdict, confidence, quote. verdict must be SUPPORTED when the source "
