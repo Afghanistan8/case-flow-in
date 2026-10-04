@@ -26,6 +26,6 @@ python -m unittest discover -s tests -p test_caseflow_in.py -v
 
 ## Deployment
 
-The verified Caseflow IN Studionet deployment is `0xBac9E6e8D32794608EaaAb8fB70F6AC3881ecc38` on chain `61999`. Its deployment transaction is [`0x2ee48f10ba7462930f531201971f53ac5d04f7963165b98a355a224c85e8596f`](https://explorer-studio.genlayer.com/tx/0x2ee48f10ba7462930f531201971f53ac5d04f7963165b98a355a224c85e8596f), finalized with `MAJORITY_AGREE`. The local source SHA-256 after line-ending normalization is `68bd4d7f879d15e0646ef9d29e161c449b3b8682395e8d596356f1d03e19cf7d`.
+The verified Caseflow IN Studionet deployment is `0xBac9E6e8D32794608EaaAb8fB70F6AC3881ecc38` on chain `61999`. Its deployment transaction is [`0x2ee48f10ba7462930f531201971f53ac5d04f7963165b98a355a224c85e8596f`](https://explorer-studio.genlayer.com/tx/0x2ee48f10ba7462930f531201971f53ac5d04f7963165b98a355a224c85e8596f), finalized with `MAJORITY_AGREE`. The normalized local/on-chain source SHA-256 is `531dab945a04b97f90f58896424282858db39d867481fb7b125a12bb1d0eb8d4`.
 
 The repository is intentionally contract-only; no Caseflow files or dependencies are included.
